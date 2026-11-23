@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME = 'nestjs-image'
         EMAIL = "karansmishra.84@gmail.com "
         PORT = "3000"
-        URL = "http://51.20.137.63:$PORT/"
+        
     }
 
     stages {
@@ -44,7 +44,7 @@ pipeline {
                 script {
                     emailext (
                         subject: "Jenkins Build Notification",
-                        body: "The Jenkins build has completed successfully.!n\nYou can access the application at: $URL",
+                        body: "The Jenkins build has completed successfully.!n\nYou can access the application at: http://51.20.137.63:3000/",
                         to: "$EMAIL"
                     )
                 }
